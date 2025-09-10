@@ -17,6 +17,63 @@ print(result)  # Output: 6
 
 For more detailed documentation, please see [DOCS.md](DOCS.md).
 
+## Local Development with Virtual Environments
+
+Here is a step-by-step guide to using this library in another local project with a virtual environment:
+
+1.  **Create a new project directory** for your other project:
+
+    ```bash
+    mkdir my-other-project
+    cd my-other-project
+    ```
+
+2.  **Create a virtual environment**:
+
+    ```bash
+    python -m venv venv
+    ```
+
+3.  **Activate the virtual environment**:
+
+    -   On Windows:
+        ```bash
+        .\venv\Scripts\activate
+        ```
+    -   On macOS and Linux:
+        ```bash
+        source venv/bin/activate
+        ```
+
+4.  **Install the `demo-pypi` library** from the local path of the `demo-pypi` project. Replace `../demo-pypi` with the actual path to the `demo-pypi` directory:
+
+    ```bash
+    pip install ../demo-pypi
+    ```
+
+    Or, for active development, install it in editable mode:
+
+    ```bash
+    pip install -e ../demo-pypi
+    ```
+
+5.  **Create a Python script** (e.g., `main.py`) in your new project and use the library:
+
+    ```python
+    from demo_pypi import add_one
+
+    result = add_one(10)
+    print(f"The result is: {result}")
+    ```
+
+6.  **Run the script**:
+
+    ```bash
+    python main.py
+    ```
+
+    You should see the output: `The result is: 11`
+
 ## Building and Publishing
 
 To build and publish this package, follow these steps:
